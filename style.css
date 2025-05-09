@@ -155,8 +155,8 @@ nav ul li a:hover {
 
 /* Sections General */
 section {
-  padding: 6rem 2rem; /* Increased padding to account for fixed header */
-  min-height: 80vh; /* Ensure sections take up significant space */
+  padding: 4rem 2rem; /* Increased padding to account for fixed header */
+  min-height: auto; /* Ensure sections take up significant spac, original hardcoded at 80vh, updated to auto */
 }
 
 section:nth-child(even) {
@@ -167,11 +167,13 @@ section:nth-child(even) {
 #hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* content starts from top */
   align-items: center;
   text-align: center;
-  min-height: 100vh; /* Full viewport height */
-  background-color: var(--background-color); /* Ensure it's not alternating */
+  padding-top: 12rem; /* add space for fixed header */
+  padding-bottom: 8rem; /* optional bottom space */
+  min-height: auto; /* ✅ this is now effective */
+  background-color: var(--background-color);
 }
 
 #hero .hero-content {
@@ -378,7 +380,7 @@ footer {
   }
 
   #hero {
-    min-height: 80vh;
+    min-height: auto;
   }
 
   #skills .skills-container,
