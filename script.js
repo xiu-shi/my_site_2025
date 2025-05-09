@@ -35,3 +35,33 @@ document.addEventListener("DOMContentLoaded", () => {
     // TODO: Add any other desired interactivity (e.g., simple animations)
 });
 
+
+//Add Basic Carousel Logic
+const images = [
+  "images/photo1.jpg",
+  "images/photo2.jpg",
+  "images/photo3.jpg",
+  "images/photo4.jpg",
+  "images/photo5.jpg",
+];
+
+let current = 0;
+const imgElement = document.querySelector(".carousel-img");
+
+// Initial load (in case JS runs before image loads)
+imgElement.src = images[current];
+
+document.querySelector(".next-btn").addEventListener("click", () => {
+  current = (current + 1) % images.length;
+  updateImage();
+});
+
+document.querySelector(".prev-btn").addEventListener("click", () => {
+  current = (current - 1 + images.length) % images.length;
+  updateImage();
+});
+
+function updateImage() {
+  imgElement.setAttribute("src", images[current]);
+}
+  
