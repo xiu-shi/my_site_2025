@@ -265,6 +265,7 @@ section:nth-child(even) {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem; /* Adds vertical gap */
 }
 
 /* TODO: Add styles for project card image */
