@@ -1,5 +1,5 @@
- # This workflow deploys the site to an S3 bucket and invalidates the CloudFront distribution. May 2025
- name: Deploy My Portfolio Site
+# This workflow deploys the site to an S3 bucket and invalidates the CloudFront distribution. May 2025
+name: Deploy My Portfolio Site
 
 on:
   push:
@@ -23,11 +23,11 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-west-1  # my region Ireland
+          aws-region: eu-west-1 # my region Ireland
 
       - name: Build and Deploy to S3
         run: |
-          aws s3 sync . s3://amzn-s3-my-site-2025 --delete 
+          aws s3 sync . s3://amzn-s3-my-site-2025 --delete
 
       - name: Invalidate CloudFront Cache
         run: |
